@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'token' => env('SMS_POH_TOKEN', '4baQqzOUZmyBiD2tdYCQ4WSBziBBhNwIMmOHCMpcY0PoJ6w04HLX1SBOdaua_HHL'),
+    'token' => env('SMS_POH_TOKEN', 'your_token'),
 
     /*
     |--------------------------------------------------------------------------
