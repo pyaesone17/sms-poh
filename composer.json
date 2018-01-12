@@ -1,0 +1,58 @@
+{
+    "name": "pyaesone17/sms-poh",
+    "type": "library",
+    "email" : "promise286@gmail.com",
+    "description": "SmsPoh Sdk for laravel",
+    "keywords": [
+        "pyaesone17",
+        "SmsPoh"
+    ],
+    "homepage": "https://github.com/pyaesone17/SmsPoh",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pyae Sone Nyein",
+            "email": "promise286@gmail.com",
+            "homepage": "https://pyaesone17.github.io/veve/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : "~5.6|~7.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : ">=5.4.3",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "pyaesone17\\SmsPoh\\": "src"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "pyaesone17\\SmsPoh\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "providers": [
+            "pyaesone17\\SmsPoh\\SmsPohServiceProvider"
+        ],
+        "aliases": {
+            "SmsPohFacade": "pyaesone17\\SmsPoh\\Facades\\SmsPohFacade"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
