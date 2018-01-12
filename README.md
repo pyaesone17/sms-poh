@@ -19,35 +19,40 @@ $ php artisan vendor:publish
 
 Configure the token in the sms-poh.php config file.
 ```
-    'token' => env('SMS_POH_TOKEN', 'Your_token_from_the_dashboard'),
+'token' => env('SMS_POH_TOKEN', 'Your_token_from_the_dashboard'),
 ```
 
 ## Usage
 
 For fetching messages.
 
+1. Using Facade
 ``` php
 $results = SmsPohFacade::fetch(1);
 ```
 
+2.Using Container 
 ``` php
 $sms = app()->make(pyaesone17\SmsPoh\SmsPoh::class);
 $results = $sms->fetch(1);
 ```
 
+3.Using function 
 ``` php
 $resutls = fetch_smspoh(1);
 ```
 
 For sending messages.
 
+1. Using Facade
 ``` php
 $results = SmsPohFacade::send(
     ['+959790646062','+95943160544'],
     'Nice to meet you'
-);;=
+);
 ```
 
+2.Using Container 
 ``` php
 $sms = app()->make(pyaesone17\SmsPoh\SmsPoh::class);
 $results = $sms->send(
@@ -56,6 +61,7 @@ $results = $sms->send(
 );
 ```
 
+3.Using function 
 ``` php
 $results = send_smspoh(
     ['+959790646062','+95943160544'],
