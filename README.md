@@ -1,6 +1,16 @@
 # SMS Poh LARAVEL SDK
+https://smspoh.com/
 
-This is my personal library to make it easier for developers.
+This is my personal library to make it easier for developers. This is not offical SDK for smspoh.
+The main goal to create this package is I hate curl , guzzle or etc .... And I made abstraction.
+Now I could use easily by calling like this. That is it.
+
+``` php
+send_smspoh(
+    ['+959790646062','+95943160544'],
+    'Nice to meet you'
+);
+```
 
 ## Install
 
