@@ -22,7 +22,7 @@ Configure the token in the sms-poh.php config file.
 'token' => env('SMS_POH_TOKEN', 'Your_token_from_the_dashboard'),
 ```
 
-## Usage
+## SDK Usage 
 
 For fetching messages.
 
@@ -50,6 +50,11 @@ $results = SmsPohFacade::send(
     ['+959790646062','+95943160544'],
     'Nice to meet you'
 );
+
+$results = SmsPohFacade::send(
+    '+959790646062',
+    'Nice to meet you'
+);
 ```
 
 2.Using Container 
@@ -68,6 +73,72 @@ $results = send_smspoh(
     'Nice to meet you'
 );
 ```
+
+## Notification Channel Usage
+
+This package also include custom notification channel for interacting with Laravel Notification features.
+Here is how to use it.
+
+``` php
+
+class SendSmsPohNotification extends Notification
+{
+    use Queueable;
+
+    public $message;
+
+    /**
+     * Create a new notification instance.
+     *
+     * @return void
+     */
+    public function __construct($message)
+    {
+        $this->message = $message;
+    }
+
+    /**
+     * Get the notification's delivery channels.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function via($notifiable)
+    {
+        return [pyaesone17\SmsPoh\SmsPohChannel::class];
+    }
+
+    /**
+     * Get the sms representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function toMMSms($notifiable)
+    {
+        return [
+            'message' => $this->message,
+            'to' => '+959790646062',
+            'test' => 1,
+            'callback' => function ($result)
+            {
+                // After sms is being sent or failed
+                // The callback will fire, here you can
+                // do whatever you want with the result.
+                // If you don't want, just pass as null
+                dd($result);
+            }
+        ];
+    }
+```
+
+And Notify like this 
+
+```
+$user = App\User::first();
+$user->notify(new App\Notifications\SendSmsPohNotification("Hello world"));
+```
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

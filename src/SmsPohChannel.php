@@ -22,7 +22,7 @@ class SmsPohChannel extends Notification
     public function send($notifiable, Notification $notification)
     {
         $client = new SmsClient($this->endPoint, $this->token);
-        $payload = $notification->toArray($notifiable);
+        $payload = $notification->toMMSms($notifiable);
         
         $client->send($payload);
     }
