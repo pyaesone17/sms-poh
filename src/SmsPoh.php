@@ -18,7 +18,7 @@ class SmsPoh
      * @param  \Illuminate\Notifications\Notification  $notification
      * @return void
      */
-    public function send($to, $message, $test=true, $callback=null)
+    public function send($to, $message, $test=false, $callback=null)
     {
         return $this->client->send([
             'to' => $to,

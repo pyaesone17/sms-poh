@@ -1,7 +1,7 @@
 <?php 
 
 if (! function_exists('send_smspoh')) {
-    function send_smspoh($to, $message, $test=true, $callback=null)
+    function send_smspoh($to, $message, $test=false, $callback=null)
     {
         $smsPoh = app()->make(\pyaesone17\SmsPoh\SmsPoh::class);
         return $smsPoh->send($to, $message, $test, $callback);

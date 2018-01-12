@@ -84,6 +84,8 @@ $results = send_smspoh(
 );
 ```
 
+If you want to send message as testing purpose, you could pass true as a third parameter.
+
 ## Notification Channel Usage
 
 This package also include custom notification channel for interacting with Laravel Notification features.
