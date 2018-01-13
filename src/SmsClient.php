@@ -35,7 +35,7 @@ class SmsClient
             ]);
 
             $result = json_decode( $response->getBody()->getContents(),true);
-
+            
             if (isset($payload['callback']) || $payload['callback'] !== null) {
                 $this->fireCallback($payload['callback'], $result);
             }

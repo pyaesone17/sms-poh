@@ -18,9 +18,10 @@
         }
     ],
     "require": {
+        "php": "~7.1",
+        "guzzlehttp/guzzle": "^6.2",
         "illuminate/support": "~5.5",
-        "php" : "~7.1",
-        "guzzlehttp/guzzle": "^6.2"
+        "pyaesone17/sms-poh": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit" : ">=5.4.3",

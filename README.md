@@ -132,7 +132,7 @@ class SendSmsPohNotification extends Notification
             'message' => $this->message,
             'to' => '+959790646062',
             'test' => 1,
-            'callback' => function ($result)
+            'callback' => function (...$result)
             {
                 // After sms is being sent or failed
                 // The callback will fire, here you can
