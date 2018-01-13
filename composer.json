@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "illuminate/support": "~5.1",
+        "illuminate/support": "~5.5",
         "php" : "~7.1",
         "guzzlehttp/guzzle": "^6.2"
     },
@@ -45,11 +45,13 @@
         "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
     },
     "extra": {
-        "providers": [
-            "pyaesone17\\SmsPoh\\SmsPohServiceProvider"
-        ],
-        "aliases": {
-            "SmsPohFacade": "pyaesone17\\SmsPoh\\Facades\\SmsPohFacade"
+        "laravel": {
+            "providers": [
+                "pyaesone17\\SmsPoh\\SmsPohServiceProvider"
+            ],
+            "aliases": {
+                "SmsPohFacade": "pyaesone17\\SmsPoh\\Facades\\SmsPohFacade"
+            }
         }
     },
     "config": {
