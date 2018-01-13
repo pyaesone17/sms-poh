@@ -17,7 +17,7 @@ send_smspoh(
 Via Composer
 
 ``` bash
-$ composer require pyaesone17/sms-poh
+$ composer require pyaesone17/sms-poh:^1.1
 ```
 
 ## Set Up
